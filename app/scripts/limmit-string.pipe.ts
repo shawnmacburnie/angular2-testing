@@ -1,13 +1,5 @@
 import {Pipe, PipeTransform} from 'angular2/core';
-/*
- * Raise the value exponentially
- * Takes an exponent argument that defaults to 1.
- * Usage:
- *   value | exponentialStrength:exponent
- * Example:
- *   {{ 2 |  exponentialStrength:10}}
- *   formats to: 1024
-*/
+
 @Pipe({name: 'limmitString'})
 export class LimmitStringPipe implements PipeTransform {
 	transform(value:string, args:string[]) : any {
