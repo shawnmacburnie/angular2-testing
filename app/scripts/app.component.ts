@@ -4,11 +4,12 @@ import {OnInit} from 'angular2/core';
 import {Hero} from './hero';
 import {HeroDetailComponent} from './hero-detail.component';
 import {HeroService} from './hero.service';
+import {LimmitStringPipe} from './limmit-string.pipe';
 
 @Component({
   selector: 'my-app',
   template:`
-    <h1>{{title}}</h1>
+    <h1>{{title | limmitString:10}}</h1>
     <h2>My Heroes</h2>
     <ul class="heroes">
       <li *ngFor="#hero of heroes"
@@ -68,7 +69,8 @@ import {HeroService} from './hero.service';
     }
   `],
   directives: [HeroDetailComponent],
-  providers: [HeroService]
+  providers: [HeroService],
+  pipes: [LimmitStringPipe]
 })
 export class AppComponent implements OnInit {
 	constructor(private _heroService: HeroService) { }
